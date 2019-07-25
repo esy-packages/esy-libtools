@@ -10,9 +10,6 @@
         "val": "#{self.lib / 'pkgconfig' : $PKG_CONFIG_PATH }"
       }
     },
-    "buildEnv": {
-      "VERSION": "2.4.6"
-    },
     "build": [
       "find ./ -exec touch -t 200905010101 {} +",
       [
