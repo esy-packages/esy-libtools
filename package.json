@@ -18,6 +18,7 @@
         "--disable-dependency-tracking",
         "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}"
       ],
+      "echo '10000' > .serial",
       "make",
       "make install"
     ]
