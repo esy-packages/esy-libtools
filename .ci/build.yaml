@@ -12,6 +12,7 @@ jobs:
     inputs:
       key: |
         esy
+        esy-libtools
         $(Agent.OS)
         ${{ parameters.ESY__CACHE_INSTALL_PATH }}
         $(Build.SourcesDirectory)/esy.lock/index.json
