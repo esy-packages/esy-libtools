@@ -1,0 +1,22 @@
+{
+  "name": "esy-libtools",
+  "version": "2.4.6000",
+  "description": "esy-libtools packaged for esy",
+  "esy": {
+    "buildsInSource": true,
+    "exportedEnv": {
+      "PKG_CONFIG_PATH": {
+        "scope": "global",
+        "val": "#{self.lib / 'pkgconfig' : $PKG_CONFIG_PATH }"
+      }
+    },
+    "build": [
+      "chmod 755 ./configure",
+      "./configure --prefix=#{self.install} #{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+      "make",
+      "make install"
+    ]
+  },
+  "dependencies": {},
+  "resolutions": {}
+}

@@ -1,0 +1,19 @@
+{
+  "checksum": "0cc961f41dbf4ff5ab5654751a4ba36e",
+  "root": "esy-libtools@link-dev:./package.json",
+  "node": {
+    "esy-libtools@link-dev:./package.json": {
+      "id": "esy-libtools@link-dev:./package.json",
+      "name": "esy-libtools",
+      "version": "link-dev:./package.json",
+      "source": {
+        "type": "link-dev",
+        "path": ".",
+        "manifest": "package.json"
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    }
+  }
+}
