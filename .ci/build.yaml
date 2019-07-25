@@ -16,7 +16,9 @@ jobs:
         ${{ parameters.ESY__CACHE_INSTALL_PATH }}
         $(Build.SourcesDirectory)/esy.lock/index.json
       path: ${{ parameters.ESY__CACHE_INSTALL_PATH }}
-  - script: mkdir test_dir
+  - script: |
+      rm -rf test_dir
+      mkdir test_dir
     displayName: 'make test dir'
   - bash: |
       echo '{"dependencies": {"libtools" : "ulrikstrid/esy-libtools:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
