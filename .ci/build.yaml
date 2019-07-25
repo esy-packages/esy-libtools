@@ -28,6 +28,6 @@ jobs:
   - script: esy build --verbose
     displayName: 'Build test project'
     workingDirectory: test_dir
-  - script: esy x which libtools
+  - script: esy x which libtoolize
     displayName: 'Test if libtools is installed'
     workingDirectory: test_dir
