@@ -2784,7 +2784,7 @@ $as_echo "$ac_cv_prog_gnu_m4_debugfile" >&6; }
 ## Automake Initialisation. ##
 ## ------------------------ ##
 
-am__api_version='1.15'
+am__api_version='1.16'
 
 # Find a good install program.  We prefer a C program (faster),
 # so one script is as good as another.  But avoid the broken or
