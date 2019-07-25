@@ -29,5 +29,5 @@ jobs:
     displayName: 'Build test project'
     workingDirectory: test_dir
   - script: esy x which libtools
-    displayName: 'Test if fswatch is installed'
+    displayName: 'Test if libtools is installed'
     workingDirectory: test_dir
