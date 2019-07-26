@@ -11,14 +11,14 @@
       }
     },
     "build": [
+      "find ./ -exec touch -t 200905010101 {} +",
       [
         "./configure",
         "--prefix=#{self.install}",
         "--disable-dependency-tracking",
         "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}"
       ],
-      "bash -c ./files/create-serial.sh",
-      "find ./ -exec touch -t 200905010101 {} +",
+      "#{os == 'linux' ? 'true' : 'bash -c ./files/create-serial.sh'}",
       "make",
       "make install"
     ]
