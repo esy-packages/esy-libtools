@@ -18,7 +18,7 @@
         "--disable-dependency-tracking",
         "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}"
       ],
-      "#{os == 'linux' ? 'true' : 'bash -c ./files/create-serial.sh'}",
+      "bash -c ./files/create-serial.sh",
       "make",
       "make install"
     ]
