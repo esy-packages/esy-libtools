@@ -16,7 +16,6 @@
         "./configure",
         "--prefix=#{self.install}",
         "--disable-dependency-tracking",
-        "--enable-ltdl-install",
         "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}"
       ],
       "bash -c ./files/create-serial.sh",
