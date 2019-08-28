@@ -21,7 +21,10 @@
       "bash -c ./files/create-serial.sh",
       "make",
       "make install"
-    ]
+    ],
+    "buildEnv": {
+      "POSIXLY_CORRECT": "true"
+    }
   },
   "dependencies": {
     "texinfo": "esy-packages/esy-texinfo#4a05feafbbcc4c57d5d25899fbdab98961b9a69c",
