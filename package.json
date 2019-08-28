@@ -23,7 +23,6 @@
       "make install"
     ],
     "buildEnv": {
-      "POSIXLY_CORRECT": "true",
       "LT_INIT": "2.4.6"
     }
   },
