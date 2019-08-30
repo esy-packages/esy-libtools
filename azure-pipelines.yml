@@ -1,18 +1,40 @@
 jobs:
-- template: .ci/build.yaml
-  parameters:
-    host: macOS
-    pool:
-      vmImage: 'macOS-10.13'
+- job: macOS
+  pool:
+    vmImage: 'macOS-latest'
+  steps:
+    - template: ./.ci/use-esy.yml
+    - bash: ./test.sh
+      displayName: "Test package"
 
-- template: .ci/build.yaml
-  parameters:
-    host: Linux
-    pool:
-      vmImage: 'Ubuntu-16.04'
+- job: Linux
+  pool:
+    vmImage: 'Ubuntu-latest'
+  steps:
+    - template: ./.ci/use-esy.yml
+    - bash: ./test.sh
+      displayName: "Test package"
 
-- template: .ci/build.yaml
-  parameters:
-    host: Windows
-    pool:
-      vmImage: 'vs2017-win2016'
+- job: Windows
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+    - template: ./.ci/use-esy.yml
+    - bash: mkdir -p test_dir
+      displayName: 'make test dir'
+    - bash: |
+        echo '{"dependencies": {"libtools" : "esy-packages/esy-libtools:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
+      displayName: 'create test package.json'
+      workingDirectory: test_dir
+    - script: esy install
+      displayName: 'Install esy-deps'
+      workingDirectory: test_dir
+    - script: esy build --verbose
+      displayName: 'Build test project'
+      workingDirectory: test_dir
+    - script: esy x libtoolize --help
+      displayName: 'Test if libtools is installed'
+      workingDirectory: test_dir
+    - script: esy x which libtoolize
+      displayName: 'Test if libtools is installed'
+      workingDirectory: test_dir

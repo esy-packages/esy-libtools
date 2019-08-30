@@ -17,5 +17,18 @@ jobs:
       #       ${{ parameters.ESY__CACHE_INSTALL_PATH }}
       #       $(Build.SourcesDirectory)/esy.lock/index.json
       #     path: ${{ parameters.ESY__CACHE_INSTALL_PATH }}
-      - bash: ./test.sh
-        displayName: "Test package"
+      - bash: mkdir -p test_dir
+        displayName: "make test dir"
+      - bash: |
+          echo '{"dependencies": {"libtools" : "esy-packages/esy-libtools:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
+        displayName: "create test package.json"
+        workingDirectory: test_dir
+      - script: esy install
+        displayName: "Install esy-deps"
+        workingDirectory: test_dir
+      - script: esy build --verbose
+        displayName: "Build test project"
+        workingDirectory: test_dir
+      - script: esy x which libtoolize
+        displayName: "Test if libtools is installed"
+        workingDirectory: test_dir
