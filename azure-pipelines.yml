@@ -32,9 +32,9 @@ jobs:
     - script: esy build --verbose
       displayName: 'Build test project'
       workingDirectory: test_dir
-    - script: esy x libtoolize --help
-      displayName: 'Test if libtools is installed'
-      workingDirectory: test_dir
     - script: esy x which libtoolize
-      displayName: 'Test if libtools is installed'
+      displayName: 'Test where libtoolize is installed'
+      workingDirectory: test_dir
+    - script: esy x libtoolize --help
+      displayName: 'Test if libtoolize is installed'
       workingDirectory: test_dir
