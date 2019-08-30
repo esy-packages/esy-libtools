@@ -1,6 +1,6 @@
 # esy-libtools
 
-[![Build Status](https://dev.azure.com/strid/OSS/_apis/build/status/ulrikstrid.esy-libtools?branchName=master)](https://dev.azure.com/strid/OSS/_build/latest?definitionId=33&branchName=master)
+[![Build Status](https://dev.azure.com/strid/OSS/_apis/build/status/esy-packages.esy-libtools?branchName=master)](https://dev.azure.com/strid/OSS/_build/latest?definitionId=37&branchName=master)
 
 libtools packaged for [esy](https://esy.sh).
 
