@@ -20,7 +20,7 @@ jobs:
   - script: mkdir -p test_dir
     displayName: 'make test dir'
   - bash: |
-      echo '{"dependencies": {"libtools" : "ulrikstrid/esy-libtools:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
+      echo '{"dependencies": {"libtools" : "esy-packages/esy-libtools:package.json#'$(git rev-parse --short HEAD)'"}}' > package.json
     displayName: 'create test package.json'
     workingDirectory: test_dir
   - script: esy install
