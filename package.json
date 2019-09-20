@@ -16,7 +16,8 @@
         "./configure",
         "--prefix=#{self.install}",
         "--disable-dependency-tracking",
-        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}"
+        "#{os == 'windows' ? '--host=x86_64-w64-mingw32' : ''}",
+        "#{os == 'windows' ? '--target=x86_64-w64-mingw32' : ''}"
       ],
       "bash -c ./files/create-serial.sh",
       "make install"
