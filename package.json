@@ -20,7 +20,7 @@
         "#{os == 'windows' ? '--target=x86_64-w64-mingw32' : ''}"
       ],
       "bash -c ./files/create-serial.sh",
-      "make install"
+      "#{os == 'darwin' ? './validate-glibtool.sh' : 'make install'}"
     ],
     "buildEnv": {
       "LT_INIT": "2.4.6"
